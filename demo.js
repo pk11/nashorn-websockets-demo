@@ -3,13 +3,13 @@ var Thread = java.lang.Thread;
 var StaticFileHandler = Packages.org.webbitserver.handler.StaticFileHandler;
 var HttpHandler = Packages.org.webbitserver.HttpHandler;
 var BaseWebSocketHandler = Java.extend(Packages.org.webbitserver.BaseWebSocketHandler);
-var ConcurrentHashMap = java.util.concurrent.ConcurrentHashMap;
+var Map = java.util.HashMap;
 
 var websocket = new BaseWebSocketHandler() {
 
 	connectionCount: 1,
-
-	connections: new ConcurrentHashMap(),
+	//note: Webbit is single-threaded
+	connections: new Map(),
 
 	onOpen: function (connection) {
 		connection.send("Number of active connections: " + this.connectionCount );
@@ -34,6 +34,8 @@ var websocket = new BaseWebSocketHandler() {
 
 var helloworld = new HttpHandler {
 	handleHttpRequest: function (request, response, control) {
+		//note: Webbit is single-threaded
+		//this essentially means execute this block of code on nextTick 
 		control.execute(
 		new java.lang.Runnable() {
 			run: function () {
