@@ -36,11 +36,8 @@ var helloworld = new HttpHandler {
 	handleHttpRequest: function (request, response, control) {
 		//note: Webbit is single-threaded
 		//this essentially means execute this block of code on nextTick 
-		control.execute(
-		new java.lang.Runnable() {
-			run: function () {
-				response.content("Hello World").end()
-			}
+		control.execute(function () {
+	            response.content("Hello World").end();
 		});
 	}
 };
