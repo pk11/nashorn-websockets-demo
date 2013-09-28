@@ -27,4 +27,8 @@ and
 
 `make console`
 
+# Development environment:
+
+Combining all this with [fswatch] (https://github.com/alandipert/fswatch), one could get a pretty decent development environment for building server side JavaScript projects on the JVM.
+
 
