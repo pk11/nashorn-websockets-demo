@@ -1,7 +1,10 @@
 # tl;dr
 
-This demo app demonstrates how to create a simple non-blocking WebSocket and HTTP server using Nashorn Java scripting (hello end-to-end Javascript apps on the JVM!)
+This demo app demonstrates how to create a simple non-blocking WebSocket and HTTP server using Nashorn scripting and Webbit (hello end-to-end, Javascript apps on the JVM!)
 
+# quick intro
+
+http://tech.kinja.com/a-simple-realtime-webapp-using-nashorn-scripting-1059181159
 
 # prerequisites:
 
